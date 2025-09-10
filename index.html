@@ -162,24 +162,9 @@
 			requestAnimationFrame(animate);
 
 			function adjustCanvasDimensions() {
-				// Get the device pixel ratio
-				var ratio = window.devicePixelRatio || 1;
-				
-				// Set the canvas dimensions with the ratio applied
-				canvas.width = window.innerWidth * ratio;
-				canvas.height = window.innerHeight * ratio;
-				canvas.style.width = window.innerWidth + "px";
-				canvas.style.height = window.innerHeight + "px";
-				
-				// If the engine is initialized, notify it of the resize
-				if (engine && engine.notifyResize) {
-					engine.notifyResize();
-				}
+				canvas.width = innerWidth;
+				canvas.height = innerHeight;
 			}
-			
-			// Add the resize handler
-			window.addEventListener("resize", adjustCanvasDimensions);
-			
 			animationCallbacks.push(adjustCanvasDimensions);
 			adjustCanvasDimensions();
 
@@ -273,3 +258,4 @@
 	//]]></script>
 </body>
 </html>
+
