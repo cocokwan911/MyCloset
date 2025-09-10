@@ -111,7 +111,7 @@
 			visibility: visible;
 		}
 	</style>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 	<canvas id='canvas'>
@@ -256,23 +256,22 @@
 			}
 		})();
 	//]]></script>
-<script>
-  const canvas = document.querySelector("canvas");
-  const ratio = window.devicePixelRatio || 1;
+	<script>
+		const canvas = document.querySelector("canvas");
+		const ratio = window.devicePixelRatio || 1;
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth * ratio;
-    canvas.height = window.innerHeight * ratio;
-    canvas.style.width = window.innerWidth + "px";
-    canvas.style.height = window.innerHeight + "px";
+		function resizeCanvas() {
+		canvas.width = window.innerWidth * ratio;
+		canvas.height = window.innerHeight * ratio;
+		canvas.style.width = window.innerWidth + "px";
+		canvas.style.height = window.innerHeight + "px";
+		const ctx = canvas.getContext("2d");
+		if (ctx) ctx.imageSmoothingEnabled = false;
+		}
 
-    const ctx = canvas.getContext("2d");
-    if (ctx) ctx.imageSmoothingEnabled = false;
-  }
-
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
-</script>
+		window.addEventListener("resize", resizeCanvas);
+		resizeCanvas();
+	</script>
 
 </body>
 </html>
