@@ -257,20 +257,22 @@
 		})();
 	//]]></script>
 	<script>
+	  window.addEventListener("load", () => {
 		const canvas = document.querySelector("canvas");
 		const ratio = window.devicePixelRatio || 1;
 
 		function resizeCanvas() {
-		canvas.width = window.innerWidth * ratio;
-		canvas.height = window.innerHeight * ratio;
-		canvas.style.width = window.innerWidth + "px";
-		canvas.style.height = window.innerHeight + "px";
-		const ctx = canvas.getContext("2d");
-		if (ctx) ctx.imageSmoothingEnabled = false;
+		  canvas.width = window.innerWidth * ratio;
+		  canvas.height = window.innerHeight * ratio;
+		  canvas.style.width = window.innerWidth + "px";
+		  canvas.style.height = window.innerHeight + "px";
+		  const ctx = canvas.getContext("2d");
+		  if (ctx) ctx.imageSmoothingEnabled = false;
 		}
 
 		window.addEventListener("resize", resizeCanvas);
 		resizeCanvas();
+	  });
 	</script>
 
 </body>
